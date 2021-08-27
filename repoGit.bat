@@ -1,4 +1,4 @@
-:: @echo off
+@echo off
 
 title repogit
   setlocal EnableExtensions EnableDelayedExpansion
