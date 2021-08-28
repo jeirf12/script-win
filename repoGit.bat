@@ -48,9 +48,12 @@ title repogit
 
 :ContinueSequence
   if %LEN% gtr 5 (
+    git branch | for /f "tokens=2" %%a in ('findstr "*"') do @echo %%a >temp.txt
+    set/p branch=< temp.txt
+    del temp.txt
     git add .
     git commit -m "%~1"
-    git push
+    git push -u origin %branch%
   ) else (
     echo/ [*] Digite un mensaje mayor a 5 caracteres
   )
