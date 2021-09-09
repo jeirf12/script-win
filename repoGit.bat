@@ -1,6 +1,22 @@
 @echo off
 
 ::================================Inicio========================================
+:: Todo este fragmento de código se necesita para los colores
+for /F %%a in ('echo prompt $E ^| cmd') do (
+    set "ESC=%%a"
+)
+:: Se puede definir mas codigos de colores aqui
+:: OJO: no borrar el endColour porque puede ocasionar 
+:: variaciones en la ejecucion de este codigo
+
+set redColour=%ESC%[31m
+set greenColour=%ESC%[32m
+set yellowColour=%ESC%[33m
+set blueColour=%ESC%[34m
+set purpleColour=%ESC%[35m
+set grayColour=%ESC%[37m
+set endColour=%ESC%[0m
+
 title repogit
   setlocal EnableExtensions EnableDelayedExpansion
       :Init
@@ -20,7 +36,7 @@ title repogit
           for /F "delims= " %%f in ('"(git status | findstr /R "^Changes ^Untracked") | find /c /v """') do set/a status=%%f
           call :VerifiedStatus2 %1
         ) else (
-          echo/ [*] Dirijase a un directorio valido
+          echo/ %purpleColour%[*]%endColour%%redColour% Dirijase a un directorio valido%endColour%
         )
         goto Finish
 
@@ -28,13 +44,13 @@ title repogit
         if "%status%" geq "1" (
           call :Longitude %1
         ) else (
-          echo/ [*] No hay cambios pendientes para subir
+          echo/ %purpleColour%[*]%endColour%%greenColour% No hay cambios pendientes para subir%endColour%
         )
         goto Finish
 
       :ModeUse
-        echo  Modo de uso
-        echo. .\repoGit "Mensaje del Commit"
+        echo  %yellowColour%Modo de uso%endColour%
+        echo. %purpleColour%.\repoGit%endColour%%yellowColour% "Mensaje del Commit"%endColour%
         goto Finish
 
       :: Mide la longitud de una cadena
@@ -53,7 +69,7 @@ title repogit
           git commit -m "%~1"
           git push -u origin %branch%
         ) else (
-          echo/ [*] Digite un mensaje mayor a 5 caracteres
+          echo/ %purpleColour%[*]%endColour%%yellowColour% Digite un mensaje mayor a 5 caracteres%endColour%
         )
 
       :Finish
