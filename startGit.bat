@@ -37,7 +37,7 @@ title startGit
             if "%~4"=="''" goto :HelpMe
             call :VerifiedFolder %3 %4 %1 %2
           ) else (
-            call :AddUrlRepo "master" %1 %2
+            call :VerifiedFolder "master" "master" %1 %2
           )
         )
       ) else (
