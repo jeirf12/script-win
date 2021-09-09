@@ -29,7 +29,11 @@ title startGit
         if "%~1"=="-b" (
           if "%~2"=="" goto :HelpMe
           if "%~2"=="''" goto :HelpMe
-          call :VerifiedFolder %1 %2 %3 %4
+          if "%~3"=="-r" (
+            call :VerifiedFolder %1 %2 %3 %4
+          ) else (
+            call :HelpMe
+          )
         )
         if "%~1"=="-r" (
           if "%~3"=="-b" (
