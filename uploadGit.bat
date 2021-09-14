@@ -17,7 +17,7 @@ set purpleColour=%ESC%[35m
 set grayColour=%ESC%[37m
 set endColour=%ESC%[0m
 
-title repogit
+title uploadgit
   setlocal EnableExtensions EnableDelayedExpansion
       :Init
         set args=0
@@ -50,7 +50,7 @@ title repogit
 
       :ModeUse
         echo  %yellowColour%Modo de uso%endColour%
-        echo. %purpleColour%.\upGit%endColour%%yellowColour% "Mensaje del Commit"%endColour%
+        echo. %purpleColour%.\uploadGit%endColour%%yellowColour% "Mensaje del Commit"%endColour%
         goto Finish
 
       :: Mide la longitud de una cadena

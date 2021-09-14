@@ -17,7 +17,7 @@ set purpleColour=%ESC%[35m
 set grayColour=%ESC%[37m
 set endColour=%ESC%[0m
 
-title startGit
+title initGit
   setlocal EnableExtensions EnableDelayedExpansion
   
     :Init
