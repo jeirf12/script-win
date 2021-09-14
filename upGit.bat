@@ -50,7 +50,7 @@ title repogit
 
       :ModeUse
         echo  %yellowColour%Modo de uso%endColour%
-        echo. %purpleColour%.\repoGit%endColour%%yellowColour% "Mensaje del Commit"%endColour%
+        echo. %purpleColour%.\upGit%endColour%%yellowColour% "Mensaje del Commit"%endColour%
         goto Finish
 
       :: Mide la longitud de una cadena

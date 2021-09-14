@@ -71,7 +71,7 @@ title startGit
       goto :Finish
 
     :HelpMe
-      echo  %yellowColour%Modo de uso: .\startGit%endColour%
+      echo  %yellowColour%Modo de uso: .\initGit%endColour%
       echo.       %purpleColour%-b%endColour%%redColour% "NewNameBranch"%endColour%       %yellowColour%Especifica el nombre de la rama principal%endColour%
       echo.       %purpleColour%-r%endColour%%redColour% urlRepositoryRemote%endColour%   %yellowColour%Conecta el proyecto con el repositorio remoto especificado%endColour%
       echo.                                %yellowColour%Nota: Si no se especifica la opcion -b, deja el nombre de la rama por defecto (master)%endColour%
