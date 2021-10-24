@@ -46,13 +46,16 @@ title Password Decode
 
     :PasswordSSID
       echo %greenColour%         SSID              Password%endColour%
-      for /f "tokens=4,*" %%c in ('"netsh wlan show profiles "%~2" key=clear | findstr /R "*Key Content*""') do @echo %blueColour%%~2%endColour%             %yellowColour%%%c %%d%endColour%
+      for /f "tokens=4,*" %%c in ('"netsh wlan show profiles "%~2" key=clear | findstr /R "*Key Content*""') do (
+        @echo %blueColour%%~2%endColour%             %yellowColour%%%c %%d %endColour% 
+        @echo %%c %%d | clip
+      ) 
       goto Finish
     
     :ModeUse
       echo %yellowColour%Modo de uso: .\passwordWifi%endColour%
       echo      %purpleColour%-t%endColour%         %yellowColour%Muestra todas las redes con su ssid y su contrasenia%endColour%
-      echo      %purpleColour%-s%endColour%%redColour% "ssid"%endColour%  %yellowColour%Muestra la contrasenia de la red [ssid] pasada por argumentos%endColour%
+      echo      %purpleColour%-s%endColour%%redColour% "ssid"%endColour%  %yellowColour%Muestra la contrasenia de la red [ssid] pasada por argumentos y la copia a la clipboard%endColour%
       echo      %purpleColour%-h%endColour%         %yellowColour%Muestra esta ayuda%endColour%
       goto Finish
 
