@@ -46,6 +46,17 @@ setlocal EnableExtensions EnableDelayedExpansion
     md module\%nameCapitalize%\src\Form\
     md module\%nameCapitalize%\src\Model\
     md module\%nameCapitalize%\view\%name%\%name%\
+    copy NUL > module\%nameCapitalize%\src\Module.php
+    copy NUL > module\%nameCapitalize%\config\module.config.php
+    copy NUL > module\%nameCapitalize%\src\Controller\%nameCapitalize%Controller.php
+    copy NUL > module\%nameCapitalize%\view\%name%\%name%\index.phtml
+    copy NUL > module\%nameCapitalize%\view\%name%\%name%\add.phtml
+    copy NUL > module\%nameCapitalize%\view\%name%\%name%\edit.phtml
+    copy NUL > module\%nameCapitalize%\view\%name%\%name%\delete.phtml
+    copy NUL > data\schema.sql
+    copy NUL > module\%nameCapitalize%\src\Model\%nameCapitalize%.php
+    copy NUL > module\%nameCapitalize%\src\Model\%nameCapitalize%Table.php
+    copy NUL > module\%nameCapitalize%\src\Form\%nameCapitalize%Form.php
     goto :EOF
 
   :ModeUse
