@@ -67,7 +67,7 @@ title uploadgit
           del temp.txt
           git add .
           git commit -m "%~1"
-          timeout /t 3
+          timeout /t 3 > NUL
           git push -u origin %branch%
         ) else (
           echo/ %purpleColour%[*]%endColour%%yellowColour% Digite un mensaje mayor a 5 caracteres%endColour%
