@@ -54,7 +54,7 @@ setlocal EnableExtensions EnableDelayedExpansion
     copy NUL module\%nameCapitalize%\view\%name%\%name%\edit.phtml > NUL
     copy NUL module\%nameCapitalize%\view\%name%\%name%\delete.phtml > NUL
     copy NUL data\schema.sql > NUL
-    copy NUL module\%nameCapitalize%\src\Model\%nameCapitalize%.ph > NULp
+    copy NUL module\%nameCapitalize%\src\Model\%nameCapitalize%.php > NUL
     copy NUL module\%nameCapitalize%\src\Model\%nameCapitalize%Table.php > NUL
     copy NUL module\%nameCapitalize%\src\Form\%nameCapitalize%Form.php > NUL
     goto :EOF
