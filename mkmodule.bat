@@ -1,6 +1,10 @@
 @echo off
 
 ::================================Inicio========================================
+:: @brief Este script se encarga de generar un modulo para el framework laminas https://getlaminas.org/
+::        Creando todo el conjunto de carpetas y archivos necesarios para esto
+:: @params NameModule recibe el nombre del modulo a crear
+::
 :: Todo este fragmento de código se necesita para los colores
 for /F %%a in ('echo prompt $E ^| cmd') do (
     set "ESC=%%a"
@@ -53,7 +57,6 @@ setlocal EnableExtensions EnableDelayedExpansion
     copy NUL module\%nameCapitalize%\view\%name%\%name%\add.phtml > NUL
     copy NUL module\%nameCapitalize%\view\%name%\%name%\edit.phtml > NUL
     copy NUL module\%nameCapitalize%\view\%name%\%name%\delete.phtml > NUL
-    copy NUL data\schema.sql > NUL
     copy NUL module\%nameCapitalize%\src\Model\%nameCapitalize%.php > NUL
     copy NUL module\%nameCapitalize%\src\Model\%nameCapitalize%Table.php > NUL
     copy NUL module\%nameCapitalize%\src\Form\%nameCapitalize%Form.php > NUL
