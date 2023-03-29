@@ -4,8 +4,6 @@ set nameVersion=%~1
 
 2>NUL CALL :CASE_%nameVersion%
 IF ERRORLEVEL 1 CALL :DEFAULT_CASE
-
-echo Done.
 exit /B 
 
 :CASE_8
@@ -17,7 +15,12 @@ exit /B
   GOTO :SET_JAVA %name%
 
 :DEFAULT_CASE
-  echo Error, version %nameVersion% no encontrada
+  if "%nameVersion%" == "" (
+    echo Uso comando: 
+    echo              "win-java 8|17"
+  ) else (
+    echo Error, version %nameVersion% no encontrada.
+  )
   GOTO END_CASE
 
 :END_CASE
@@ -25,7 +28,9 @@ exit /B
   GOTO :EOF
 
 :SET_JAVA %name%
-  set JAVA_HOME=C:\Program Files\Java\jdk%name%
-  set Path=%JAVA_HOME%\bin;%Path%
+  set path_java=%PROGRAMFILES%\Java\jdk%name%
+  setx JAVA_HOME "%path_java%"
+  set JAVA_HOME=%path_java%
+  set PATH=%JAVA_HOME%\bin;%PATH%
   echo Java %nameVersion% Activated.
   GOTO :END_CASE
