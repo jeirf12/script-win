@@ -5,9 +5,9 @@
 for %%f in (%*) do (
   if exist "%%~f" (
     if exist "%%~f\" (
-      rd /s/q %%~f
+      rd /s/q "%%~f"
     ) else (
-      del /q %%~f
+      del /q "%%~f"
     )
   )
 )
